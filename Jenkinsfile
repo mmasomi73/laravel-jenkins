@@ -10,7 +10,8 @@ pipeline {
         }
         stage('Test'){
             steps{
-                echo 'Test Projects'
+                // here first run docker file
+                sh "docker-compose up -d"
             }
         }
         stage('Build'){
