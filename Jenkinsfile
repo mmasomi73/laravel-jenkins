@@ -23,11 +23,11 @@ pipeline {
             steps{
                 dir('/var/www/laravel-jenkins'){
                     sh 'php artisan down'
-                    sh 'git pull '
+                    sh "git pull "
                     sh "composer install"
                     sh "npm install"
-                    echo 'npm run build'
-                    sh 'php artisan up'
+                    sh "npm run build"
+                    sh "php artisan up"
                 }
 
             }
