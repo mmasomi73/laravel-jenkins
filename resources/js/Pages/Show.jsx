@@ -28,7 +28,7 @@ const Show = () => {
                             Test Jenkins CI/CD For Laravel / InertiaJS / ReactJS
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
-                            This is New Update Too
+                            This is New Update
                         </p>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
                             ✌🤸‍♂️🎂
