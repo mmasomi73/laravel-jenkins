@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Production'){
             steps{
-                dir('var/www//var/www/laravel-jenkins'){
+                dir('/var/www/laravel-jenkins'){
                     sh 'php artisan down'
                     sh 'git pull '
                     sh "composer install"
