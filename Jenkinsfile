@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('SCM Checkout') {
+        stage('SCM Dev Pull') {
             steps {
                 // here fetch main branch from git
                 git branch: 'main', url: 'https://github.com/mmasomi73/laravel-jenkins.git'
@@ -10,17 +10,26 @@ pipeline {
         }
         stage('Test'){
             steps{
-
+                sh "composer install"
+                sh "npm install"
             }
         }
         stage('Build'){
             steps{
-                echo 'Build Project'
+                echo 'npm run build'
             }
         }
-        stage('Deploy'){
+        stage('Production'){
             steps{
-                echo 'Deploy Project'
+                dir('var/www//var/www/laravel-jenkins'){
+                    sh 'php artisan down'
+                    sh 'git pull '
+                    sh "composer install"
+                    sh "npm install"
+                    echo 'npm run build'
+                    sh 'php artisan up'
+                }
+
             }
         }
     }
