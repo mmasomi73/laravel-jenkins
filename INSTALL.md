@@ -1,10 +1,3 @@
-<style>
-body {
-  direction: rtl;
-  unicode-bidi: embed;
-    font-family: Vazir;
-}
-</style>
 
 # نصب و ستاپ جنکیز
 
